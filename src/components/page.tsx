@@ -43,22 +43,22 @@ type MenuItem = {
     children?: MenuItem[];
 };
 const items: MenuItem[] = [
-    getItem("Каталог D1", "d1", "/content", undefined,[
-        getItem("Лобня", "lobnya", "/content", undefined, [
-            getItem("Парк_1", "park_1", "/content"),
-            getItem("Парк_2", "park_2", "/content"),
-            getItem("Стадион", "stadion", "/content"),
-            getItem("Университет", "university", "/content"),
-            getItem("Церковь", "cherch", "/content"),
+    getItem("Каталог D1", "d1", "/mockup", undefined,[
+        getItem("Лобня", "lobnya", "/mockup", undefined, [
+            getItem("Парк_1", "park_1", "/mockup"),
+            getItem("Парк_2", "park_2", "/mockup"),
+            getItem("Стадион", "stadion", "/mockup"),
+            getItem("Университет", "university", "/mockup"),
+            getItem("Церковь", "cherch", "/mockup"),
         ]),
-        getItem("Марк", "8", "/content"),
-        getItem("Одинцово", "8", "/content"),
+        getItem("Марк", "8", "/mockup"),
+        getItem("Одинцово", "8", "/mockup"),
     ]),
-    getItem("Каталог D2", "d2", "/content", undefined),
-    getItem("Каталог D3", "d3", "/content", undefined, ),
-    getItem("Видеоролики", "videos", "/content", undefined),
-    getItem("Пиктограммы", "pictograms", "/content", undefined),
-    getItem("Удаленные", "deleted", "/content", <DeleteOutlined />),
+    getItem("Каталог D2", "d2", "/mockup", undefined),
+    getItem("Каталог D3", "d3", "/mockup", undefined, ),
+    getItem("Видеоролики", "videos", "/mockup", undefined),
+    getItem("Пиктограммы", "pictograms", "/mockup", undefined),
+    getItem("Удаленные", "deleted", "/mockup", <DeleteOutlined />),
 ];
 const routes = [
     {

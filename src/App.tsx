@@ -32,10 +32,10 @@ type MenuItem = {
 };
 
 const topMenu: MenuItem[] = [
-    getItem("Мета", "meta", "/content", undefined,),
-    getItem("Контент", "content", "/content", undefined),
-    getItem("Темы", "themes", "/content", undefined, ),
-    getItem("Шаблоны", "templates", "/content", undefined),
+    getItem("Мета", "meta", "/mockup", undefined,),
+    getItem("Контент", "content", "/mockup", undefined),
+    getItem("Темы", "themes", "/mockup", undefined, ),
+    getItem("Шаблоны", "templates", "/mockup", undefined),
 ];
 const DropdownMenu = () => (
     <Dropdown key="more" overlay={<div>Menu</div>} placement="bottomRight">
@@ -56,7 +56,7 @@ function App() {
           </div>
           <Routes>
               <Route path="/" element={<Page />} />
-              <Route path="/content" element={<Page />} />
+              <Route path="/mockup" element={<Page />} />
               {/*<Route path="/products" element={<ProductsPage />} />*/}
               {/*<Route path="/dashboard" element={<DashboardPage />} />*/}
               {/*<Route path="/orders" element={<OrdersPage />} />*/}
