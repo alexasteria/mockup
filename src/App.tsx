@@ -32,10 +32,10 @@ type MenuItem = {
 };
 
 const topMenu: MenuItem[] = [
-    getItem("Мета", "meta", "/meta", undefined,),
+    getItem("Мета", "meta", "/content", undefined,),
     getItem("Контент", "content", "/content", undefined),
-    getItem("Темы", "themes", "/themes", undefined, ),
-    getItem("Шаблоны", "templates", "/templates", undefined),
+    getItem("Темы", "themes", "/content", undefined, ),
+    getItem("Шаблоны", "templates", "/content", undefined),
 ];
 const DropdownMenu = () => (
     <Dropdown key="more" overlay={<div>Menu</div>} placement="bottomRight">
@@ -44,25 +44,26 @@ const DropdownMenu = () => (
 );
 
 function App() {
+    const [menu, setMenu] = useState<string>("content")
   return (
       <BrowserRouter>
           <div style={{display: "flex", width: '100%'}}>
               <div className="logo" style={{width: 250, padding: 10}}>Reserved for LOGO</div>
-              <Menu style={{width: "100%"}} onClick={()=>null} selectedKeys={["content"]} mode="horizontal" items={topMenu} />
+              <Menu style={{width: "100%"}} onClick={(v)=>setMenu(v.key)} selectedKeys={[menu]} mode="horizontal" items={topMenu} />
               <div style={{display: "flex", padding: 10}}><Avatar src="https://joeschmoe.io/api/v1/random" />
                   <Button key="3">Выход</Button>
                   <DropdownMenu key="more" /></div>
           </div>
           <Routes>
               <Route path="/" element={<Page />} />
-              <Route path="/lobnya" element={<Page />} />
+              <Route path="/content" element={<Page />} />
               {/*<Route path="/products" element={<ProductsPage />} />*/}
               {/*<Route path="/dashboard" element={<DashboardPage />} />*/}
               {/*<Route path="/orders" element={<OrdersPage />} />*/}
               {/*<Route path="/setting" element={<SettingPage />} />*/}
           </Routes>
                   <Footer style={{ textAlign: "center" }}>
-                      Design Mockup ©2022 Created by @alexasteria
+                      Design Mockup ©2022
                   </Footer>
       </BrowserRouter>
   );
