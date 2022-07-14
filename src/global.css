@@ -1,0 +1,7 @@
+.menu ul {
+    width: 256px;
+    height: 100%;
+}
+.menu {
+    position: relative;
+}

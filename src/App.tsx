@@ -1,11 +1,11 @@
-import React, {useCallback, useState} from 'react';
+import React, {useState} from 'react';
 import 'antd/dist/antd.css';
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
-import {Avatar, Button, Dropdown, Layout, Menu, PageHeader} from "antd";
-import Page from "./components/page";
-import "./global.css"
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import {Avatar, Button, Dropdown, Layout, Menu} from "antd";
 import {MoreOutlined} from "@ant-design/icons";
-const { Content, Footer, Sider } = Layout;
+const { Footer } = Layout;
+import "./global.css"
+import Content from "./components/content";
 
 function getItem(
     label: React.ReactNode,
@@ -37,26 +37,22 @@ const topMenu: MenuItem[] = [
     getItem("Темы", "themes", "/mockup", undefined, ),
     getItem("Шаблоны", "templates", "/mockup", undefined),
 ];
-const DropdownMenu = () => (
-    <Dropdown key="more" overlay={<div>Menu</div>} placement="bottomRight">
-        <Button type="text" icon={<MoreOutlined style={{ fontSize: 20 }} />} />
-    </Dropdown>
-);
 
 function App() {
     const [menu, setMenu] = useState<string>("content")
   return (
       <BrowserRouter>
           <div style={{display: "flex", width: '100%'}}>
-              <div className="logo" style={{width: 250, padding: 10}}>Reserved for LOGO</div>
+              <div className="logo" style={{width: 250, padding: 10, display: "flex", justifyContent: "center", margin: "auto"}}><div style={{fontWeight: 700}}>МЦД</div></div>
               <Menu style={{width: "100%"}} onClick={(v)=>setMenu(v.key)} selectedKeys={[menu]} mode="horizontal" items={topMenu} />
               <div style={{display: "flex", padding: 10}}><Avatar src="https://joeschmoe.io/api/v1/random" />
-                  <Button key="3">Выход</Button>
-                  <DropdownMenu key="more" /></div>
+                  <Dropdown key="more" overlay={<div><Button key="3">Выход 1</Button><Button key="4">Выход 2</Button></div>} placement="bottomRight">
+                      <Button type="text" icon={<MoreOutlined style={{ fontSize: 20 }} />} />
+                  </Dropdown></div>
           </div>
           <Routes>
-              <Route path="/" element={<Page />} />
-              <Route path="/mockup" element={<Page />} />
+              <Route path="/" element={<Content />} />
+              <Route path="/mockup" element={<Content />} />
               {/*<Route path="/products" element={<ProductsPage />} />*/}
               {/*<Route path="/dashboard" element={<DashboardPage />} />*/}
               {/*<Route path="/orders" element={<OrdersPage />} />*/}
